@@ -5,15 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    
+    <style>
+        body{
+            background-color: azure;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        
+        input{
+            padding: 10px;
+            box-shadow:3px 3px 3px rgb(0,0,0,0.3);
+            background-color: white;
+            border-radius: 5%;
+            margin-left: 200px;
+            margin-top: 60px;
+        }
+        .headings{
+            margin-left: 100px;
+        }
+        .headings h1{
+            margin-top: 20px;
+            color: crimson;
+            font-weight: 1000;
+            background-color:aliceblue;
+            text-align: left;
+        }
+        .headings h2{
+            text-align: left;
+            margin-left: 0p;
+            font-weight: 600;
+        }
+
+
+        button{
+           padding: 10px; 
+           border-radius: 10%;
+           box-shadow:3px 3px 3px rgb(0,0,0,0.3);
+           background-color: rgb(104, 104, 199);
+           color: white;
+           font-weight:500;
+           font-size: 1em;
+           margin-left: 10px;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>DYNAMICS EVENTS</h1>
+    <div class="headings">
+        <h1>DYNAMICS EVENTS</h1>
     <h2>Demosnstrate a Web page Hnadling Dynamic events </h2>
+    </div>
 
-    <form name="fms" onsubmit="return greeting()" >
         <input type="text" name="nme" id="fname">
-        <input type="button" value="Display Greetings" onclick="return greeting()" >
-    </form>
-    <script src="./app.js"></script>
+        <button id="btn" class="btn btn-primary" >Greetings</button>
+        
+    <script>
+            let name=document.getElementById('fname');  
+            const btn = document.getElementById('btn');
+            btn.addEventListener('click', (e) => {
+                    if(name.textLength){
+                        alert(name.value);
+                        return true;
+                        
+                    }else{
+                        alert("No Greetings Typed")
+                    
+                    }
+    })
+    </script>
 </body>
 </html>
